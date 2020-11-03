@@ -5,7 +5,7 @@
 
     <div class="form-group row">
       <label class="col-2 col-form-label">Nombre</label>
-      <div class="col-8">
+      <div class="col">
 
         <input class="form-control"
                type="text"
@@ -20,7 +20,7 @@
 
     <div class="form-group row">
       <label class="col-2 col-form-label">Apellido</label>
-      <div class="col-8">
+      <div class="col">
 
         <input class="form-control"
                type="text"
@@ -37,7 +37,7 @@
 
   <div class="form-group row">
     <label class="col-2 col-form-label">Correo</label>
-    <div class="col-8">
+    <div class="col">
 
       <input class="form-control"
              type="email"
@@ -50,10 +50,29 @@
     </div>
   </div>
 
+  <div class="form-group row" formGroupName="direccion">
+    <label class="col-2 col-form-label">Dirección</label>
+    <div class="form-row col">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="calle" formControlName="calle"
+        [class.is-invalid]="isCalleInvalid">
+        <small *ngIf="isCalleInvalid" class="text-danger">
+          Introduzca la calle
+        </small>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="ciudad" formControlName="ciudad"
+        [class.is-invalid]="isCiudadInvalid">
+        <small *ngIf="isCiudadInvalid" class="text-danger">
+          Introduzca la ciudad
+        </small>
+      </div>
+    </div>
+  </div>
 
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
-    <div class="input-group col-md-8">
+    <div class="input-group col">
       <button type="submit" class="btn btn-outline-primary btn-block">
         Guardar
       </button>
